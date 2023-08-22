@@ -1,0 +1,11 @@
+<div class="d-flex align-items-center border-bottom py-2 gap-2">
+  <div class="h2"><%= @article.title %></div>
+  <%= link_to edit_article_path(@article), class: 'text-primary' do %>
+    <i class="fa-solid fa-pencil"></i>
+  <% end %>
+  <%= link_to article_path(@article), class: 'text-primary', data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+    <i class="fa-regular fa-trash-can"></i>
+  <% end %>
+</div>
+<div class="py-3"><%= @article.content %>
+</div>
